@@ -23,23 +23,19 @@
     }
 
     section {
-      padding: 80px 80px;
+      padding: 80px 60px;
       min-height: 100vh;
-      margin-bottom: 600px;
     }
 
     .intro-section {
       display: flex;
       gap: 40px;
-      margin-bottom: -600px;
-      
     }
 
     .anomic-images {
       width: 50%;
-      max-height: 600px;
+      max-height: 700px;
       overflow-y: scroll;
-
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -51,31 +47,7 @@
       display: none;
     }
 
-
-
     .anomic-images img {
-      width: 100%;
-      height: auto;
-    }
-
-    .anomic-images2 {
-      width: 50%;
-      max-height: 1000px;
-      overflow-y: scroll;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    .anomic-images2::-webkit-scrollbar {
-      display: none;
-    }
-
-
-
-    .anomic-images2 img {
       width: 100%;
       height: auto;
     }
@@ -92,18 +64,21 @@
       color: #ccc;
     }
 
+    /* === Header Above Scroll Gallery === */
     .gallery-header {
       background: #fff;
       color: #000;
       padding: 20px 60px;
       font-size: 16px;
       font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-
 
     /* === Horizontal Scroll Gallery === */
     #scroll-gallery {
-      overflow-x: scroll;
+      overflow-x: auto;
       overflow-y: hidden;
       height: 400px;
       scroll-behavior: auto;
@@ -117,7 +92,6 @@
     }
 
     .scroll-track {
-      margin-top: 100px;
       display: flex;
       font-size: 0;
       gap: 0;
@@ -164,111 +138,51 @@
 </head>
 <body>
 
-  <div class="gallery-header">
-    THEORICAL BACKGROUND
-  </div>
-  <section id="method">
-    <h1>1.ANOMIC ARCHIVE<br><br>FURTHER RESEARCH ABOUT Gerhard Richter's "Atlas"</h1>
+  <section id="intro">
     <div class="intro-section">
       <div class="anomic-images">
-        <img src="atlas1.webp" alt="Atlas Example 1" />
-        <img src="atlas2.webp" alt="Atlas Example 2" />
-        <img src="atlas3.webp" alt="Atlas Installation" />
-        <img src="atlas4.webp" alt="Atlas Wall View" />
+        <h1>ANOMIC ARCHIVE<br><br>FURTHER RESEARCH ABOUT Gerhard Richter's "Atlas"</h1>
+        <img src="atlas1.jpg" alt="Atlas Example 1" />
+        <img src="atlas2.jpg" alt="Atlas Example 2" />
+        <img src="atlas3.jpg" alt="Atlas Installation" />
+        <img src="atlas4.jpg" alt="Atlas Wall View" />
       </div>
       <div class="intro-text">
         <p>
-          Gerhard Richter의 《Atlas》는 수많은 이미지들을 텍스트나 설명 없이 나열해놓은, 구조화되지 않은 아카이브다. <Br>
-          이 아카이브는 특정한 서사를 구성하지 않고, 오히려 ‘기억의 충돌과 실패’, ‘불확정성’ 그 자체를 드러내는 방식으로 <br>
-          작동한다. Atlas는 전후 독일이라는 역사적 맥락 속에서, 사진-기억-역사 간의 긴장을 시각적으로 구성하며,<br>
-          기억을 복원하는 대신 그 파편성과 단절, 충돌을 노출한다.
+          Gerhard Richter의 《Atlas》는 수백 장의 사진과 스케치들을 명확한 설명 없이 패널 위에 무질서하게 배열한 비정형 아카이브 작업으로,<br>
+          사진-기억-역사 간의 관계를 새롭게 질문하는 장치로 작동한다. Buchloh는 이를 "기억의 위기 상태에서 작동하는 장치"로 보며,<br>
+          사진을 통한 기록이 더 이상 명확한 설명이나 과거의 회복으로 이어지지 않는 현대의 조건 속에서 Atlas는 오히려 기억의 파편성과 불완전성을 드러내는 방식으로 기능한다고 말한다.<br>
+          이러한 리히터의 아카이브 전략은, 단순히 과거를 복원하거나 주관적인 서사를 덧붙이기보다, 기억이 조직되기를 거부하는 이미지들의 충돌과 의미 없는 배열,<br>
+          과잉된 시각 정보의 병렬 구성을 통해 ‘기억이 실패하는 상태’를 드러낸다. 이로써 Atlas는 설명되지 않는 이미지의 다층적 배열을 통해 “열린 서사”를 구성하고,<br>
+          관람자에게 기억의 재구성 가능성을 위임하는 구조를 만든다.
           <br><br>
-          프로젝트를 통해 디지털 시대에 존재하는 ‘기억의 위기’를 리히터의 방식으로 다시 사유한다.<br>
-          오늘날 개인의 기억, 특히 SNS를 비롯한 디지털 플랫폼에 남겨진 개인 서사는 언제든 삭제되고 잊힐 수 있는 <Br>
-          불안정한 상태의 기억이다. 이러한 디지털 이미지들은 제도적 보호나 물리적 보존 장치 없이 공기 중에 부유하며, <br>
-          그 존재 자체가 위태롭다. 이는 ‘기억은 있지만, 이를 호출할 구조가 없는 상태’를 의미한다.
-          <br><br>
-          프로젝트는 이 같은 디지털 이미지의 불안정성과 제도적 공백에 주목한다.<br>
-          공실 공간에서 수집한 이미지들은 상업적 맥락에서 삭제된 개인들의 흔적이며, 그 자체로 기억의 말소 상태를 반영한다.<Br>
-          이 이미지들을 다시 ‘기억’으로 포섭하거나 서사를 붙이는 대신, 프로젝트는 이들을 리히터의 방식처럼 의미 없이, <br>
-          무질서하게, 병렬적으로 배열한다. 이는 아카이브를 통해 기억을 회복하려는 시도가 아니라, 기억이 실패하고 <br>
-          미완으로 남아 있는 상태 자체를 드러낸다.
+          나의 프로젝트 《Realize Vacancy》는 이와 유사한 전략을 도입한다.<br>
+          도시의 공실 공간에서 수집된 SNS 이미지 데이터들은 각 공간의 서사를 고스란히 담고 있음에도 불구하고, 상업적 차단물(임대 현수막, 가림천 등)에 의해 가시화되지 못한 채 방치되고 있다.<br>
+          이는 곧 ‘기억은 존재하지만 서사를 호출할 구조가 부재한 상태’로, 디지털 시대의 대표적 아카이브 위기를 반영한다.
         </p>
       </div>
     </div>
   </section>
 
-  <section id="method2">
-    <h1>2. VISUAL OBSTACLES <br><br>FURTHER RESEARCH ABOUT CHRISTO’S WORK</h1>
-    <div class="intro-section">
-      <div class="anomic-images2">
-        <img src="show1.webp" alt="Atlas Example 1" />
-        <img src="show2.webp" alt="Atlas Example 2" />
-        <img src="show3.webp" alt="Atlas Installation" />
-        <img src="show4.webp" alt="Atlas Wall View" />
-      </div>
-      <div class="intro-text">
-        <p>
-          Christo and Jeanne-Claude의 작업은 익숙한 도시의 풍경을 시각적으로 차단하고 공간의 본래 기능을<br> 
-중지시키는 방식으로, 관객과 공간 사이의 새로운 감각적 관계를 유도한다. 특히 초기 작업인 Store Fronts <br>
-시리즈(1964–68)는 실제 상업 공간의 전면을 재현하면서도, 내부가 전혀 보이지 않도록 천, 종이, 포장지 등으로 <br>
-유리창을 가림으로써 ‘볼 수 있음’이라는 공간의 기본적 기능을 무력화시켰다. 이는 단순한 은폐가 아니라, <Br>
-사물과 공간이 스스로의 기능을 상실하는 방식으로 작동하며, 관객의 시선과 움직임을 조작하는 전략이었다. <br>
-          <br><br>
-          프로젝트는 바로 이 ‘시각적 차단’과 ‘기능 상실’이라는 전략에 주목한다.<br>
-나는 공실을 조사하는 과정에서, 사람들의 관심조차 가로막는 임대 현수막·가림천 등의 시각적 방해물에 주목했다. <br>
-처음에는 이러한 구조물이 공실의 상태를 ‘알리는’ 기능을 한다고 여겼지만, 곧 이들이 오히려 공간을 <br>
-‘보이지만 접근 불가한 대상’으로 만들며, 서사적 접근 가능성을 차단하고 있음을 깨달았다. 관객은 공간에 호기심을 <br>
-느껴 접근하지만, 결국 공간의 과거나 서사를 해석할 수 있는 단서는 제거되어 있고, 공간은 오직 임대 정보만을 <br>
-전달하는 비서사적 평면으로 작동하게 된다.
-          <br><br>
-          Christo가 물리적으로 실재하는 사물에 포장을 덧씌움으로써 그것을 보이게 하면서도 동시에 기능을 박탈하는 <br>
-기표로 전환한 것처럼, 나 역시 공실에 부착되어 있던 시각적 방해 요소들을 설치의 재료로 사용하여, <br>
-이미지 아카이브를 담은 액자와 쇼케이스 구조를 다시 가린다. 또한 관람자의 움직임을 유도하되, 최종적으로는 <br>
-기억에 접근하지 못하도록 차단된 구조를 통해 '기억의 결여' 상태를 공간화한다. 이로써 공간과 사물은 관객의 <br>
-시선을 포획하면서도, 본래 기능을 거세당한 비기능적 장치로 전환된다. 이는 Christo가 현실의 공간을 낯설게 <br>
-만들기 위해 사용한 방식과 구조적으로 닮아 있으며, 동시에 디지털 시대의 ‘기억에 접근하지 못하는 공간’이라는 <br>
-새로운 맥락을 덧입힌 확장된 시각 실험이라 할 수 있다.
-        </p>
-      </div>
-    </div>
-  </section>
   <div class="gallery-header">
     DIGITAL ANOMIC ARCHIVE
   </div>
 
   <section id="scroll-gallery">
-    <h1> DIGITAL ANOMIC ARCHIVE</h1>
     <div class="scroll-track" id="track"></div>
   </section>
 
-  <div class="gallery-header">
-    INSTALLATION PLAN
-  </div>
-
-  <section id="install-plan">
-    <div class="scroll-track" id="track"></div>
-  </section>
-
-  
-
-  <div class="gallery-header">
-    VISUAL EXPERIMENTS
-  </div>
-
-  <section id="test images">
-    <img class="test-image" img src="test.webp"></section>
-  </section>
+  <section id="sns-grid"></section>
 
   <script>
     const track = document.getElementById('track');
     const scrollGallery = document.getElementById('scroll-gallery');
 
     const imageSources = [
-      'Asset 1.svg', 'Asset 4.svg', 'Asset 5.svg', 'Asset 6.svg',
-      'Asset 7.svg', 'Asset 8.svg', 'Asset 9.svg', 'Asset 10.svg',
-      'Asset 11.svg', 'Asset 12.svg', 'Asset 13.svg', 'Asset 14.svg',
-      'Asset 15.svg', 'Asset 16.svg'
+      'SVG/Asset%201.svg', 'SVG/Asset%204.svg', 'SVG/Asset%205.svg', 'SVG/Asset%206.svg',
+      'SVG/Asset%207.svg', 'SVG/Asset%208.svg', 'SVG/Asset%209.svg', 'SVG/Asset%2010.svg',
+      'SVG/Asset%2011.svg', 'SVG/Asset%2012.svg', 'SVG/Asset%2013.svg', 'SVG/Asset%2014.svg',
+      'SVG/Asset%2015.svg', 'SVG/Asset%2016.svg'
     ];
 
     for (let i = 0; i < 3; i++) {
@@ -306,10 +220,37 @@
       }
     });
 
-    
-  </script>
+    const snsGrid = document.getElementById('sns-grid');
+    const snsImgs = ['sns1.jpg', 'sns2.jpg', 'sns3.jpg', 'sns4.jpg'];
+    snsImgs.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.className = 'sns-img';
+      snsGrid.appendChild(img);
+    });
 
-  
+    let draggedImg = null;
+    document.addEventListener('mousedown', e => {
+      if (e.target.classList.contains('sns-img')) {
+        draggedImg = e.target;
+        draggedImg.classList.add('dragging');
+      }
+    });
+    document.addEventListener('mouseup', () => {
+      if (draggedImg) {
+        draggedImg.classList.remove('dragging');
+        draggedImg = null;
+      }
+    });
+    document.addEventListener('mousemove', e => {
+      if (draggedImg) {
+        draggedImg.style.position = 'absolute';
+        draggedImg.style.left = `${e.pageX - draggedImg.offsetWidth / 2}px`;
+        draggedImg.style.top = `${e.pageY - draggedImg.offsetHeight / 2}px`;
+      }
+    });
+  </script>
 </body>
 </html>
+
 
