@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SNS Archive Grid</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #ffffff;
+      font-family: sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);  /* 4열 도판 스타일 */
+  margin: 100px ;
+  gap: 10px;
+  align-items: center;
+  justify-content: center; 
+}
+
+.grid-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  height: 300px;        /* 원하는 고정 셀 높이 */
+  background: #111;
+}
+
+.sns-img {
+  max-height: 250px;
+  max-width: 250px;
+  object-fit: contain;
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+
+
+    .dragging {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1000;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid" id="grid"></div>
+
+  <script>
+    const grid = document.getElementById('grid');
+    const snsImgs = [
+      'SVG/sns3-1.svg', 'SVG/sns3-2.svg', 'SVG/sns3-3.svg',
+      'SVG/sns3-4.svg', 'SVG/sns3-5.svg', 'SVG/sns3-6.svg',
+      'SVG/sns3-7.svg', 'SVG/sns3-8.svg', 'SVG/sns3-9.svg',
+      'SVG/sns3-10.webp', 'SVG/sns3-11.webp', 'SVG/sns3-12.webp',
+      'SVG/sns3-13.webp', 'SVG/sns3-14.webp', 'SVG/sns3-15.webp',
+    ];
+
+    snsImgs.sort(() => Math.random() - 0.5);
+
+    snsImgs.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.className = 'sns-img';
+      grid.appendChild(img);
+    });
+
+    let dragged = null;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    document.addEventListener('mousedown', e => {
+      if (e.target.classList.contains('sns-img')) {
+        dragged = e.target;
+        const rect = dragged.getBoundingClientRect();
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+
+        dragged.classList.add('dragging');
+        dragged.style.left = `${e.pageX - offsetX}px`;
+        dragged.style.top = `${e.pageY - offsetY}px`;
+      }
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (dragged) {
+        dragged.style.left = `${e.pageX - offsetX}px`;
+        dragged.style.top = `${e.pageY - offsetY}px`;
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (dragged) {
+        dragged.classList.remove('dragging');
+
+        const rect = grid.getBoundingClientRect();
+        const cellWidth = 250 + 20;
+        const colCount = Math.floor(rect.width / cellWidth);
+
+        const x = parseInt(dragged.style.left) - rect.left;
+        const y = parseInt(dragged.style.top) - rect.top;
+
+        const col = Math.round(x / cellWidth);
+        const row = Math.round(y / cellWidth);
+        const index = row * colCount + col;
+
+        const all = Array.from(grid.children).filter(el => el !== dragged);
+        if (index >= all.length) {
+          grid.appendChild(dragged);
+        } else {
+          grid.insertBefore(dragged, all[index]);
+        }
+
+        dragged.style.position = '';
+        dragged.style.left = '';
+        dragged.style.top = '';
+        dragged.style.width = '';
+        dragged = null;
+      }
+    });
+  </script>
+</body>
+</html>
